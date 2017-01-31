@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
-mongoose.connect("mongodb://localhost/book_shop")
+mongoose.connect("mongodb://localhost/blog-app")
 
 /**
  * 数据库操作基础模型

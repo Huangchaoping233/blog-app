@@ -1,23 +1,29 @@
 <div class="life animated fideInRight">
 	<div class="plus">+</div>
 	<div class="popup">
-		<form action="">
+		<form class="life_form" action="/life/photo" multipart/form-data>
 			<h3 class="title">生活点滴</h3>
 			<span class="cancel">X</span>
 			<div class="img_div">
-				<div><img src="/img/plus.jpg" alt="" /></div>
-				<input type="file" id="img"/>
+				<div class="popup_img"><img src="/img/plus.jpg" alt="" /></div>
+				<input type="file" name="photo" id="photo" required accept=".jpg,.png"/>
 			</div>
-			
-			<input type="text" id="tip" placeholder="一句话" required="required"/>
+			<input type="text" name="tip" id="tip" placeholder="一句话" required="required"/>
 			<div>
-				<button class="btn">保存</button>
+				<button class="btn" id="life_submit">保存</button>
 			</div>
 		</form>
 	</div>
 	<div class="container padding_top_120 life_div">
-		<section>
-			
-		</section>
+		<ul>
+			{{each life as item}}
+			<li class="life-item">
+	            <img class="img" src="{{item.photo}}" />
+	            <p class="tip">{{item.tip}}</p>
+	            <p class="date">——{{item.date}}</p>
+	        </li>
+        	{{/each}}
+		</ul>
+
 	</div>
 </div>

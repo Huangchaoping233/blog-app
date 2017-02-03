@@ -1,17 +1,28 @@
-<div class="life animated fideInRight">
+<div class="learn animated fideInRight">
 	<div class="plus">+</div>
-	<div class="popup">
-		<div class="rich-editor">
-			<textarea id="myEditor"></textarea>
-		</div>
-		<div>
-			<button>保存</button>
-			<button>取消</button>
-		</div>
+	<div class="popup rich">
+		<form class="learn_form">
+			<span class="cancel">X</span>
+			<div class="title_div">
+				<label for="title">标题</label>
+				<input type="text" id="title" name="title" placeholder="学习心得">
+			</div>
+			<div class="rich-editor-container">
+
+			</div>
+			<div>
+				<button class="btn">提交</button>
+			</div>
+		</form>
 	</div>
-	<div class="container padding_top_120 life_div">
-		<section>
-			
-		</section>
+	<div class="container padding_top_120 learn_div">
+		<ul class="learn_ul">
+		    {{each learn as item}}
+			<li class="learn-item">
+	            <span class="tip">{{item.title}}</span>
+	            <span class="date">{{item.date}}</span>
+	        </li>
+        	{{/each}}
+		</ul>
 	</div>
 </div>

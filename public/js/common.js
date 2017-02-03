@@ -1,5 +1,7 @@
 
 define(['jquery','cookie'],function($){
+
+
 	// logo变色效果
 
 	$('span.logo').hover(function(){
@@ -19,14 +21,20 @@ define(['jquery','cookie'],function($){
 			'width':'80px',
 			'opacity':'1',
 			'font-size':'40px'
-		},500)
+		},300)
 
 		$(this).click(function(){
+			if($('.popup').hasClass('rich')){
+				$('.rich-editor').css('display','block')
+			}
 			$('.popup').css('display','block')
 		})
 
 		$('.cancel').click(function(){
-			$('.popup').css('display','none')
+			if($('.popup').hasClass('rich')){
+				$('.rich-editor').css('display','none')
+			}
+			$('.popup').css('display','none');
 		})
 	})
 
@@ -77,6 +85,34 @@ define(['jquery','cookie'],function($){
 	    })
 
 	})
+
+	$('#container').on('submit','.learn_form',function(event){
+		event.preventDefault();
+		var date = formDate(new Date());
+	    var title = $('input[name=title]').val();
+
+	    var content = $(".ke-edit-iframe").contents().find(".ke-content").html()
+	    $.ajax({
+	        url:'/learn/save',
+	        method:'post',
+	        data:{
+	        	date:date,
+	        	title:title,
+	        	content:content
+	        },
+	        success:function(res){
+
+	            if(res.status == 'y'){
+	                console.log(res.code);
+	                alert('保存成功');
+	                $('.popup').css('display','none');
+	                $('.rich-editor').css('display','none');
+	            }
+	        }
+	    })
+
+	})
+
 
 	function formDate(date){
 		var Y = date.getFullYear()

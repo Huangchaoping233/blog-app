@@ -18,8 +18,10 @@ define(['jquery','template','text!tplHome',  'text!tplLife', 'text!tplLearn','te
                 });
                 break;
             case "learn":
-        	strPage = learn;
-            break;
+                getLearnData(function(res){
+                    $('#container').html(res);
+                });
+                break;
             case "me":
             	strPage = me;
                 break;
@@ -39,6 +41,15 @@ define(['jquery','template','text!tplHome',  'text!tplLife', 'text!tplLearn','te
         $.getJSON('/life/getData',function(res){
             var render = template.compile(life) //生成一个渲染函数
             var strHtml = render({life:res.data}) //传递数据到页面中进行页面生成
+            callback(strHtml)
+        })
+    }
+
+    function getLearnData(callback){
+        // 通过ajax取远程数据
+        $.getJSON('/learn/getData',function(res){
+            var render = template.compile(learn) //生成一个渲染函数
+            var strHtml = render({learn:res.data}) //传递数据到页面中进行页面生成
             callback(strHtml)
         })
     }

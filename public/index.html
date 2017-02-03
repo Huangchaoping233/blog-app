@@ -8,8 +8,11 @@
 
 		<title>黄超平个人博客</title>
 		<link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
+		<link rel="stylesheet" href="/lib/kindeditor/themes/qq/qq.css" />
+		<link rel="stylesheet" href="/lib/kindeditor/plugins/code/prettify.css" />
 		<link rel="stylesheet" href="/css/common.css" />
 		<link rel="stylesheet" href="/css/main.css" />
+
 	</head>
 
 	<body>
@@ -23,7 +26,7 @@
 						<a data-page="life" href="javascript:void(0)">LIFE</a>
 					</li>
 					<li>
-						<a data-page="learn" href="javascript:void(0)">LEARN</a>
+						<a data-page="learn" id="learn" href="javascript:void(0)">LEARN</a>
 					</li>
 					<li>
 						<a data-page="me" href="javascript:void(0)">ME</a>
@@ -32,13 +35,52 @@
 						<a data-page="contact" href="javascript:void(0)">CONTACT</a>
 					</li>
 				</ul>
-			
+
 		</nav>
 
 		<div id="container" class="main">
 		</div>
-		
-		<script type="text/javascript" src="http://cdn.bootcss.com/require.js/2.3.2/require.min.js" data-main="/js/index"></script>
+
+		<div class="rich-editor" style="display:none">
+			<textarea id="myEditor" cols="30" rows="10"></textarea>
+		</div>
+
+
+		<script charset="utf-8" src="/lib/kindeditor/kindeditor.js"></script>
+		<script charset="utf-8" src="/lib/kindeditor/lang/zh-CN.js"></script>
+		<script charset="utf-8" src="/lib/kindeditor/plugins/code/prettify.js"></script>
+		<script type="text/javascript">
+				KindEditor.ready(function(K) {
+					var editor = K.create('#myEditor', {
+
+						allowFileManager : true,
+						themeType:"qq",
+						width:'840px',
+						height:'420px',
+
+						afterCreate : function() {
+							var self = this;
+							self.sync();
+							// K.ctrl(document, 13, function() {
+							// 	self.sync();
+							// 	K('form.learn_form')[0].submit();
+							// });
+							// K.ctrl(self.edit.doc, 13, function() {
+							// 	self.sync();
+							// 	K('form.learn_form')[0].submit();
+							// });
+						}
+
+					});
+
+
+					// prettyPrint();
+				});
+
+
+
+	</script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/require.js/2.3.2/require.min.js" data-main="/js/index"></script>
 	</body>
 
 </html>

@@ -164,3 +164,77 @@
 	color:grey;
 	text-align:right;
 }
+
+/*learn*/
+
+.learn{
+	width:100%;
+	min-height: 638px;
+	background-image: url(/img/life.jpg);
+	background-size: 100% 100%;
+}
+
+.learn .popup{
+	width:840px;
+	height:560px;
+	top: calc(50% - 300px);
+	left: calc(50% - 420px);
+	// display:block;
+	padding:20px;
+}
+
+.learn .tilte_div label{
+	margin:14px 10px;
+	height: 28px;
+	line-height: 28px;
+}
+
+.learn #title{
+	width:86%;
+	border-radius: 3px;
+	border:2px solid gainsboro;
+	margin: 14px 10px;
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	font-size: 20px;
+	padding: 0 5px;
+	text-align:center;
+
+}
+
+.learn .cancel{
+	top:37px;
+	right:37px;
+}
+
+.learn_form button{
+	position:absolute;
+	bottom:20px;
+	left:calc(50% - 40px);
+}
+
+.learn-item{
+	widht:840px;
+	margin-bottom: 20px;
+	height:60px;
+	background-color:rgba(255,255,255,0.7);
+	padding:0 20px;
+
+}
+
+.learn-item:hover{
+	background-color:rgba(255,255,255,0.9)
+}
+
+.learn-item span{
+	line-height: 60px;
+}
+
+.learn-item span:nth-of-type(1){
+	text-align:left;
+}
+
+.learn-item span:nth-of-type(2){
+	float:right;
+}

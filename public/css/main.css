@@ -152,6 +152,7 @@
 
 .life-item .img{
 	width: 100%;
+	height:150px;
 }
 .life-item .tip{
 	text-align:center;
@@ -170,7 +171,7 @@
 .learn{
 	width:100%;
 	min-height: 638px;
-	background-image: url(/img/life.jpg);
+	background-image: url(/img/learn.jpg);
 	background-size: 100% 100%;
 }
 
@@ -213,28 +214,91 @@
 	bottom:20px;
 	left:calc(50% - 40px);
 }
-
 .learn-item{
 	widht:840px;
 	margin-bottom: 20px;
-	height:60px;
+}
+
+.learn-item-a{
+	display:block;
+	widht:840px;
+	height:50px;
 	background-color:rgba(255,255,255,0.7);
 	padding:0 20px;
 
 }
 
-.learn-item:hover{
+.learn-item-a:hover{
 	background-color:rgba(255,255,255,0.9)
 }
 
-.learn-item span{
-	line-height: 60px;
+.learn-item-a span{
+	line-height: 50px;
 }
 
-.learn-item span:nth-of-type(1){
+.learn-item-a span:nth-of-type(1){
 	text-align:left;
+	color:gray;
 }
 
-.learn-item span:nth-of-type(2){
+.learn-item-a span:nth-of-type(2){
 	float:right;
+	color:gray;
+}
+.content{
+	widht:840px;
+	background-color:rgba(255,255,255,0.9);
+	padding:0 20px;
+	display:none;
+	border-top:1px solid gainsboro;
+	min-height:420px;
+}
+
+.pre{
+	position:absolute;
+	top:calc(50% - 30px);
+	left:calc(50% - 440px - 50px);
+	width:30px;
+	height:60px;
+	display:block;
+	background-color:rgba(255,255,255,0.3);
+	line-height:60px;
+	text-align:center;
+	font-size:24px;
+}
+
+.pre:hover{
+	background-color:rgba(255,255,255,0.9);
+}
+
+.next{
+	position:absolute;
+	top:calc(50% - 30px);
+	left:calc(50% + 440px + 50px);
+	width:30px;
+	height:60px;
+	display:block;
+	background-color:rgba(255,255,255,0.3);
+	line-height:60px;
+	text-align:center;
+	font-size:24px;
+}
+
+.next:hover{
+	background-color:rgba(255,255,255,0.9);
+}
+
+.me{
+	width:100%;
+	height: 638px;
+	background-image: url(/img/me.jpg);
+	background-size: 100% 100%;
+
+}
+.contact{
+	width:100%;
+	height: 638px;
+	background-image: url(/img/contact.jpg);
+	background-size: 100% 100%;
+
 }

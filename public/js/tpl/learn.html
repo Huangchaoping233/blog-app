@@ -1,5 +1,12 @@
 <div class="learn animated fideInRight">
 	<div class="plus">+</div>
+	{{if page > 1}}
+	<a class="pre pn learn-pn" data-page="{{page - 1}}">&lt</a>
+	{{/if}}
+
+	{{if page < pageCount}}
+	<a class="next pn learn-pn" data-page="{{page + 1}}">&gt</a>
+	{{/if}}
 	<div class="popup rich">
 		<form class="learn_form">
 			<span class="cancel">X</span>
@@ -19,10 +26,16 @@
 		<ul class="learn_ul">
 		    {{each learn as item}}
 			<li class="learn-item">
-	            <span class="tip">{{item.title}}</span>
-	            <span class="date">{{item.date}}</span>
+				<a class="learn-item-a" data-id={{item._id}}>
+		            <span class="tip">{{item.title}}</span>
+		            <span class="date">{{item.date}}</span>
+	            </a>
+	            <div class="content" data-click="1">
+	            	{{item.content}}
+	            </div>
 	        </li>
         	{{/each}}
 		</ul>
+
 	</div>
 </div>

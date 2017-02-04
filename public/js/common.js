@@ -113,6 +113,38 @@ define(['jquery','cookie'],function($){
 
 	})
 
+	// learn-ul的a标签的点击事件
+	$('#container').on('click','.learn-item-a',function(){
+		$(this).parent('.learn-item').siblings().css({
+			'display':'none'
+		}).find('.content')
+		.removeClass('current')
+		.css({
+			display:'none'
+		})
+
+		if($(this).next('.content').hasClass('current')){
+			$(this).parent('.learn-item').siblings().css({
+				'display':'block'
+			})
+			$(this).next('.content').removeClass('current')
+			.css({
+				display:'none'
+			})
+		}
+		else{
+			if($(this).next('.content').data('click') == 1){
+				$(this).next('.content').data('click','-1').html($(this).next('.content').text())
+			}
+
+			$(this).next('.content').addClass('current')
+			.css({
+				display:'block'
+			})
+
+		}
+
+	})
 
 	function formDate(date){
 		var Y = date.getFullYear()

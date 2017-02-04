@@ -1,5 +1,14 @@
 <div class="life animated fideInRight">
 	<div class="plus">+</div>
+
+	{{if page > 1}}
+	<a class="pre pn life-pn" data-page="{{page - 1}}">&lt</a>
+	{{/if}}
+
+	{{if page < pageCount}}
+	<a class="next pn life-pn" data-page="{{page + 1}}">&gt</a>
+	{{/if}}
+
 	<div class="popup">
 		<form class="life_form" action="/life/photo" multipart/form-data>
 			<h3 class="title">生活点滴</h3>
@@ -24,6 +33,9 @@
 	        </li>
         	{{/each}}
 		</ul>
+
+
+
 
 	</div>
 </div>

@@ -13,12 +13,12 @@ define(['jquery','template','text!tplHome',  'text!tplLife', 'text!tplLearn','te
             	strPage = home;
                 break;
             case "life":
-                getLifeData(function(res){
+                getLifeData(1,function(res){
                     $('#container').html(res);
                 });
                 break;
             case "learn":
-                getLearnData(function(res){
+                getLearnData(1,function(res){
                     $('#container').html(res);
                 });
                 break;
@@ -36,20 +36,34 @@ define(['jquery','template','text!tplHome',  'text!tplLife', 'text!tplLearn','te
         $('#container').html(strPage);
 	})
 
-    function getLifeData(callback){
+    $('#container').on('click','.pn',function(){
+        if($(this).hasClass('life-pn')){
+            getLifeData($(this).data('page'),function(res){
+                $('#container').html(res);
+            });
+        }
+        else{
+            getLearnData($(this).data('page'),function(res){
+                $('#container').html(res);
+            });
+        }
+    })
+
+    function getLifeData(page,callback){
         // 通过ajax取远程数据
-        $.getJSON('/life/getData',function(res){
+        $.getJSON(`/life/getData/${page}`,function(res){
             var render = template.compile(life) //生成一个渲染函数
-            var strHtml = render({life:res.data}) //传递数据到页面中进行页面生成
+            var strHtml = render({life:res.data,page:page,pageCount:res.pageCount}) //传递数据到页面中进行页面生成
             callback(strHtml)
         })
     }
 
-    function getLearnData(callback){
+    function getLearnData(page,callback){
         // 通过ajax取远程数据
-        $.getJSON('/learn/getData',function(res){
+        $.getJSON(`/learn/getData/${page}`,function(res){
             var render = template.compile(learn) //生成一个渲染函数
-            var strHtml = render({learn:res.data}) //传递数据到页面中进行页面生成
+
+            var strHtml = render({learn:res.data,page:page,pageCount:res.pageCount}) //传递数据到页面中进行页面生成
             callback(strHtml)
         })
     }

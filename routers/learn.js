@@ -23,11 +23,17 @@ router.post('/save',(req,res)=>{
 
 })
 
-router.get('/getData',(req,res)=>{
-    learnDal.getData({},data=>{
+router.get('/getData/:page?',(req,res)=>{
+    var page = 1;
+    if(req.params.page){
+        page = req.params.page;
+    }
+    learnDal.getDataByPage(page,{},data=>{
         res.json({
             status:'y',
-            data:data
+            data:data.res,
+            pageCount:data.pageCount,
+            page:page
         })
     })
 })

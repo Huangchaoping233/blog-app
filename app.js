@@ -4,6 +4,7 @@ var log = require('morgan')
 var cookieParser = require('cookie-parser')
 var multer = require('multer');
 
+global.pageSize = 6;
 
 var LifeDal = require('./common/life').LifeDal
 var LifeDal = new LifeDal()
@@ -58,11 +59,16 @@ app.post('/life/photo',upload.single('photo'),(req,res)=>{
 })
 
 
-app.get('/life/getData',(req,res)=>{
-    LifeDal.getData({},data=>{
+app.get('/life/getData/:page?',(req,res)=>{
+    var page = 1;
+    if(req.params.page){
+        page = req.params.page;
+    }
+    LifeDal.getDataByPage(page,{},data=>{
         res.json({
             status:'y',
-            data:data
+            data:data.res,
+            pageCount:data.pageCount,
         })
     })
 })

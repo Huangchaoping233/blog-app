@@ -46,7 +46,7 @@
                                 <tr>
                                     <td>{{$index+1}}</td>
                                     <td>{{$value.title}}</td>
-                                    <td>{{$value.content}}</td>
+                                    <td>{{#$value.content}}</td><!--前面加上#解决渲染时不解析html标签问题-->
                                     <td>{{$value.date}}</td>
                                     <td>
                                         <i onclick='dalDel("{{$value.id}}")' class="btn btn-sm btn-default fa fa-trash"></i>

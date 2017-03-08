@@ -2,14 +2,15 @@ var db = require('./db_base')
 var DBBase = db.DBBase
 var mongoose = db.mongoose
 var Schema = mongoose.Schema
-//创建book集合的数据结构
-var LearnSchema = new Schema({
+
+
+var learnSchema = new Schema({
     title:String,
     content:String,
     date:String
 })
 
-var Learn = mongoose.model('learn',LearnSchema) //创建Learn模型
+var Learn = mongoose.model('learn',learnSchema) //创建Learn模型
 
 /**
  * 书籍模型

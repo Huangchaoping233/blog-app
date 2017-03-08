@@ -60,6 +60,6 @@ a{
 
 .rich-editor{
 	position:absolute;
-	top: 96px;
+	top: calc(50% - 300px + 80px);
 	left: calc(50% - 400px);
 }

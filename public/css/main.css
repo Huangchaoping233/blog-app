@@ -1,7 +1,7 @@
 /*home*/
 .home{
 	width:100%;
-	height: 638px;
+	min-height: 736px;
 	background-image: url(/img/home.jpg);
 	background-size: 100% 100%;
 
@@ -37,7 +37,7 @@
 
 .life{
 	width:100%;
-	min-height: 638px;
+	min-height: 736px;
 	background-image: url(/img/life.jpg);
 	background-size: 100% 100%;
 }
@@ -170,7 +170,7 @@
 
 .learn{
 	width:100%;
-	min-height: 638px;
+	min-height: 736px;
 	background-image: url(/img/learn.jpg);
 	background-size: 100% 100%;
 }
@@ -180,7 +180,7 @@
 	height:560px;
 	top: calc(50% - 300px);
 	left: calc(50% - 420px);
-	// display:block;
+	/*display:block;*/
 	padding:20px;
 }
 
@@ -215,13 +215,13 @@
 	left:calc(50% - 40px);
 }
 .learn-item{
-	widht:840px;
+	width:840px;
 	margin-bottom: 20px;
 }
 
 .learn-item-a{
 	display:block;
-	widht:840px;
+	width:840px;
 	height:50px;
 	background-color:rgba(255,255,255,0.7);
 	padding:0 20px;
@@ -246,12 +246,12 @@
 	color:gray;
 }
 .content{
-	widht:840px;
+	width:840px;
 	background-color:rgba(255,255,255,0.9);
 	padding:0 20px;
 	display:none;
 	border-top:1px solid gainsboro;
-	min-height:420px;
+	min-height:500px;
 }
 
 .pre{
@@ -290,14 +290,14 @@
 
 .me{
 	width:100%;
-	height: 638px;
+	min-height: 736px;
 	background-image: url(/img/me.jpg);
 	background-size: 100% 100%;
 
 }
 .contact{
 	width:100%;
-	height: 638px;
+	min-height: 736px;
 	background-image: url(/img/contact.jpg);
 	background-size: 100% 100%;
 

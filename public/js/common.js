@@ -133,9 +133,9 @@ define(['jquery','cookie'],function($){
 			})
 		}
 		else{
-			if($(this).next('.content').data('click') == 1){
-				$(this).next('.content').data('click','-1').html($(this).next('.content').text())
-			}
+			// if($(this).next('.content').data('click') == 1){
+			// 	$(this).next('.content').data('click','-1').html($(this).next('.content').text())
+			// }
 
 			$(this).next('.content').addClass('current')
 			.css({

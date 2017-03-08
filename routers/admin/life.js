@@ -1,4 +1,4 @@
-// 用来处理书籍分类信息的页面关系
+
 var express = require('express')
 var router = express.Router()
 // var db = require('../../common/db').dal_book_type //引入数据处理文件
